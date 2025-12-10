@@ -1,4 +1,3 @@
-// Add your images and labels here:
 const pictures = [
   { src: "images/01.jpg", title: "Anastasia", label: "Black tea with natural bergamot, lemon and orange blossom flavors" },
   { src: "images/02.jpg", title: "AquaSummer", label: "Peach, hibiscus, apricot" },
@@ -11,7 +10,7 @@ const pictures = [
   { src: "images/10.jpg", title: "Green Jasmine", label: "Green tea with natural jasmine flavor" },
 
 ];
-// Quiz state
+
 let currentQuestion = 1;
 let score = 0;
 let repeat = [];
@@ -26,7 +25,6 @@ function loadRandomQuestion() {
   const img = document.getElementById("quizImage");
   const optionsDiv = document.getElementById("options");
 
-  // Select random picture
   let correct = {}
   do {
     correct = pictures[Math.floor(Math.random() * pictures.length)];
@@ -35,7 +33,6 @@ function loadRandomQuestion() {
   img.src = correct.src;
   repeat.push(correct.src);
 
-  // Generate answer choices
   const wrongLabels = pictures
     .filter(p => p.label !== correct.label)
     .map(p => p.label);
@@ -43,11 +40,9 @@ function loadRandomQuestion() {
   const wrongChoices = wrongLabels.sort(() => Math.random() - 0.5).slice(0, 3);
   const allChoices = [correct.label, ...wrongChoices].sort(() => Math.random() - 0.5);
 
-  // Display the question count
   document.getElementById("questionNumber").textContent =
     "Question " + currentQuestion + " of 5";
 
-  // Generate answer buttons
   optionsDiv.innerHTML = "";
   allChoices.forEach(choice => {
     const btn = document.createElement("button");
