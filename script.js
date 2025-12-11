@@ -8,16 +8,19 @@ const pictures = [
   { src: "images/07.jpg", title: "Kashmir Tchai", label: "Flavored blend of black tea and spices" },
   { src: "images/09.jpg", title: "Sleep Ritual", label: "Rooibos, verbena, natural mango flavor" },
   { src: "images/10.jpg", title: "Green Jasmine", label: "Green tea with natural jasmine flavor" },
-
+  { src: "images/12.jpg", title: "Tsarevna", label: "Blend of black tea with natural orange and spices flavors" },
 ];
 
 let currentQuestion = 1;
 let score = 0;
 let repeat = [];
+let answersA = [];
+let correctA = [];
+let N = 5;
 
 function loadRandomQuestion() {
 
-  if (currentQuestion > 5) {
+  if (currentQuestion > N) {
     showFinalScreen();
     return;
   }
@@ -41,7 +44,7 @@ function loadRandomQuestion() {
   const allChoices = [correct.label, ...wrongChoices].sort(() => Math.random() - 0.5);
 
   document.getElementById("questionNumber").textContent =
-    "Question " + currentQuestion + " of 5";
+    "Question " + currentQuestion + " of " + N;
 
   optionsDiv.innerHTML = "";
   allChoices.forEach(choice => {
@@ -51,6 +54,8 @@ function loadRandomQuestion() {
       if (choice === correct.label) {
         score++;
       }
+      correctA.push(correct);
+      answersA.push(choice);
       currentQuestion++;
       loadRandomQuestion();
     };
@@ -60,17 +65,51 @@ function loadRandomQuestion() {
 
 function showFinalScreen() {
   const container = document.querySelector(".container");
+
+  let cards = "";
+  for (let i = 0; i < answersA.length; i++) {
+    const isCorrect = answersA[i] === correctA[i].label;
+
+    cards += `
+      <div class="answer-card ${isCorrect ? "correct" : "wrong"}">
+        <img src="${correctA[i].src}" class="thumb-card" onclick="openPopup('${correctA[i].src}')">
+        <div>
+          <p><strong>Your answer:</strong> ${answersA[i]}</p>
+          <p><strong>Correct answer:</strong> ${correctA[i].label}</p>
+        </div>
+      </div>
+    `;
+  }
+
   container.innerHTML = `
     <h1>Congratulations!</h1>
-    <p>Your score: <strong>${score} / 5</strong></p>
+    <p>Your score: <strong>${score} / ${N}</strong></p>
+    ${cards}
     <button onclick="restartQuiz()">Play Again</button>
+
+    <div id="popupOverlay" class="popup-overlay" onclick="closePopup()">
+      <img id="popupImage" class="popup-image">
+    </div>
   `;
+}
+
+function openPopup(src) {
+  const overlay = document.getElementById("popupOverlay");
+  const popupImg = document.getElementById("popupImage");
+  popupImg.src = src;
+  overlay.style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popupOverlay").style.display = "none";
 }
 
 function restartQuiz() {
   score = 0;
   currentQuestion = 1;
   repeat = [];
+  answersA = [];
+  correctA = [];
   location.reload();
 }
 
