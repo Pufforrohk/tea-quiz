@@ -8,7 +8,11 @@ const pictures = [
   { src: "images/07.jpg", title: "Kashmir Tchai", label: "Flavored blend of black tea and spices" },
   { src: "images/09.jpg", title: "Sleep Ritual", label: "Rooibos, verbena, natural mango flavor" },
   { src: "images/10.jpg", title: "Green Jasmine", label: "Green tea with natural jasmine flavor" },
-  { src: "images/12.jpg", title: "Tsarevna", label: "Blend of black tea with natural orange and spices flavors" },
+  { src: "images/11.jpg", title: "Tsarevna", label: "Blend of black tea with natural orange and spices flavors" },
+  { src: "images/13.jpg", title: "AquaExotica", label: "Exotic fruit flavored blend of hibiscus and apple" },
+  { src: "images/14.jpg", title: "Four Red Fruits", label: "Black tea with natural berry flavors" },
+  { src: "images/15.jpg", title: "Immune Defense Ritual", label: "Mate, green tea, acerola cherry, natural orange and tropical fruit flavors" },
+  { src: "images/16.jpg", title: "White Anastasia ", label: "Bergamot and orange blossom flavored white tea" },
 ];
 
 let currentQuestion = 1;
