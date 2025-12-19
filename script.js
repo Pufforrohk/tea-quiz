@@ -12,7 +12,10 @@ const pictures = [
   { src: "images/13.jpg", title: "AquaExotica", label: "Exotic fruit flavored blend of hibiscus and apple" },
   { src: "images/14.jpg", title: "Four Red Fruits", label: "Black tea with natural berry flavors" },
   { src: "images/15.jpg", title: "Immune Defense Ritual", label: "Mate, green tea, acerola cherry, natural orange and tropical fruit flavors" },
-  { src: "images/16.jpg", title: "White Anastasia ", label: "Bergamot and orange blossom flavored white tea" },
+  { src: "images/16.jpg", title: "White Anastasia", label: "Bergamot and orange blossom flavored white tea" },
+  { src: "images/17.jpg", title: "Prince Vladimir", label: "Black tea, spices, citrus fruit, vanilla" },
+  { src: "images/18.jpg", title: "Be Cool", label: "Plant, peppermint, lemon verbena and licorice blend" },
+  { src: "images/19.jpg", title: "English Breakfast", label: "Blend of black teas from Asia" },
 ];
 
 let currentQuestion = 1;
@@ -20,7 +23,7 @@ let score = 0;
 let repeat = [];
 let answersA = [];
 let correctA = [];
-let N = 5;
+let N = 10;
 
 function loadRandomQuestion() {
 
