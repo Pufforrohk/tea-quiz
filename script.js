@@ -15,7 +15,9 @@ const pictures = [
   { src: "images/16.jpg", title: "White Anastasia", label: "Bergamot and orange blossom flavored white tea" },
   { src: "images/17.jpg", title: "Prince Vladimir", label: "Black tea, spices, citrus fruit, vanilla" },
   { src: "images/18.jpg", title: "Be Cool", label: "Plant, peppermint, lemon verbena and licorice blend" },
-  { src: "images/19.jpg", title: "English Breakfast", label: "Blend of black teas from Asia" },
+  { src: "images/19.jpg", title: "Memory Ritual", label: "Green tea, mate and gingseng extract, natural lemon and bergamot flavors" },
+  { src: "images/20.jpg", title: "English Breakfast", label: "Blend of black teas from Asia" },
+  { src: "images/22.jpg", title: "Thé vert à la menthe", label: "Spearmint green tea" },
 ];
 
 let currentQuestion = 1;
