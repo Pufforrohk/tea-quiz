@@ -18,6 +18,8 @@ const pictures = [
   { src: "images/19.jpg", title: "Memory Ritual", label: "Green tea, mate and gingseng extract, natural lemon and bergamot flavors" },
   { src: "images/20.jpg", title: "English Breakfast", label: "Blend of black teas from Asia" },
   { src: "images/22.jpg", title: "Thé vert à la menthe", label: "Spearmint green tea" },
+  { src: "images/23.jpg", title: "St. Petersburg", label: "Bergamot, berry, and caramel flavored black tea" },
+  { src: "images/24.jpg", title: "Glogg", label: "Flavored blend of spices, fruits and hibiscus" },
 ];
 
 let currentQuestion = 1;
